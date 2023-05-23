@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>基于Python的SQL注入和XSS漏洞检测工具</title>
+	<script type="module"></script>
+	<link rel="stylesheet" href="css/index/index.css">
+</head>
+
+<body>
+	<div class="container">
+		<!-- 菜单栏 -->
+		<div class="menu">
+			<div class="menu-item active" data-tab="tab-1">检测任务创建</div>
+			<div class="menu-item" data-tab="tab-2" id="allTask"><span onclick="GetTasks()">查看所有任务</span></div>
+			<div class="menu-item" data-tab="tab-3" id="sqlTask">SQL注入检测任务管理</div>
+			<div class="menu-item" data-tab="tab-4" id="xssTask">XSS注入检测任务管理</div>
+			<div class="menu-item" data-tab="tab-5">可视化分析</div>
+			<!-- <div class="menu-item" data-tab="tab-6">系统日志</div> -->
+		</div>
+		<!-- 内容区域 -->
+		<div class="content">
+
+			<!-- 扫描参数配置模块 -->
+			<div class="tab-pane active" data-tab="tab-1" data-src="./html/tab-1.html">
+				<iframe src="./html/tab-1.html" class="full-iframe" scrolling="no"></iframe>
+			</div>
+
+			<!-- 任务查看模块 -->
+			<div class="tab-pane" data-tab="tab-2" data-src="./html/tab-2.html">
+				<iframe src="./html/tab-2.html" class="full-iframe" scrolling="no"></iframe>
+			</div>
+
+			<!-- SQL注入检测任务管理 -->
+			<div class="tab-pane" data-tab="tab-3" data-src="./html/tab-3.html">
+				<iframe src="./html/tab-3.html" class="full-iframe" scrolling="no"></iframe>
+			</div>
+
+			<!-- XSS注入检测任务管理 -->
+			<div class="tab-pane" data-tab="tab-4" data-src="./html/tab-4.html">
+				<iframe src="./html/tab-4.html" class="full-iframe" scrolling="no"></iframe>
+			</div>
+
+			<!-- 可视化 -->
+			<div class="tab-pane" data-tab="tab-5" data-src="./html/tab-5.html">
+				<iframe src="./html/tab-5.html" class="full-iframe" scrolling="no"></iframe>
+			</div>
+
+			<!-- 系统日志 -->
+			<!-- <div class="tab-pane" data-tab="tab-6">系统日志
+			</div> -->
+
+		</div>
+	</div>
+</body>
+<script src="js/sqlTasks/sqlTasks.js"></script>
+<script src="js/xssTasks/xssTasks.js"></script>
+<script src="js/allTasks/alltasks.js"></script>
+<script src="js/index/index.js"></script>
+</html>
+
+<!-- http://testphp.vulnweb.com/artists.php?artist=1 -->

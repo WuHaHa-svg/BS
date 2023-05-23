@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/sqlTasks/sqlTasks.css">
+    <link rel="stylesheet" href="../css/alert/alert.css">
+    <link rel="stylesheet" href="../css/alert/detail.css">
+    <link rel="stylesheet" href="../css/alert/startOption.css">
+    <link rel="stylesheet" href="../css/alert/deleteOption.css">
+</head>
+
+<body>
+    <!-- 通知弹窗 -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <span id="modal-text"></span>
+        </div>
+    </div>
+        <!-- 开始按钮弹窗 -->
+        <div id="modal-startButtons" class="modal-startButtons">
+            <div class="startButtons-content">
+                <h3>请选择你的开始任务选项</h3>
+                <h6>任务ID：<span class="startId" id="startId"></span></h6>
+                <h6>任务URL：<span class="startId" id="startUrl"></span></h6>
+                <button id="singleTaskBtn" onclick="startTask(this)">开始单个任务</button>
+                <button id="allTaskBtn" onclick="startAllTask(this)">全部开始</button>
+                <button id="cancelBtn" onclick="startClose(this)">取消</button>
+            </div>
+        </div>
+        <!-- 删除按钮弹窗 -->
+    <div id="modal-deleteButtons" class="modal-deleteButtons">
+        <div class="startButtons-content">
+            <h3>请选择你的删除任务选项</h3>
+            <h6>任务ID：<span class="deleteId" id="deleteId"></span></h6>
+            <h6>任务URL：<span class="deleteId" id="deleteUrl"></span></h6>
+            <button id="singleDelete" onclick="deleteTask(this)">删除单个任务</button>
+            <button id="sonDelete" onclick="deleteSonOpt(this)">删除子任务</button>
+            <button id="cancelDelete" onclick="deleteClose(this)">取消</button>
+        </div>
+    </div>
+    <!-- 明细弹窗 -->
+    <div id="detail" class="detail">
+        <div class="detail-content">
+            <span class="close-detail">&times;</span>
+            <div class="content">
+                <table>
+                    <tr>
+                        <th colspan="2">任务详情</th>
+                    </tr>
+                    <tr>
+                        <td>ID</td>
+                        <td id="taskId"></td>
+                    </tr>
+                    <tr>
+                        <td>目标URL</td>
+                        <td id="taskUrl"></td>
+                    </tr>
+                    <tr>
+                        <td>是否SQL注入检测</td>
+                        <td id="sqlScan"></td>
+                    </tr>
+                    <tr>
+                        <td>当前深度</td>
+                        <td id="depth"></td>
+                    </tr>
+                    <tr>
+                        <td>最大深度</td>
+                        <td id="maxDepth"></td>
+                    </tr>
+                    <tr>
+                        <td>SQL注入检测状态</td>
+                        <td id="statusSql"></td>
+                    </tr>
+                    <tr>
+                        <td>上级URL</td>
+                        <td id="superUrl">http://127.0.0.1/DVWA-master/vulnerabilities/sqli/?id=&amp;Submit=Submit#</td>
+                    </tr>
+                    <tr>
+                        <td>创建时间</td>
+                        <td id="create">2023-05-03T13:37:16.840Z</td>
+                    </tr>
+                    <tr>
+                        <td>开始时间</td>
+                        <td id="start"></td>
+                    </tr>
+                    <tr>
+                        <td>结束时间</td>
+                        <td id="end"></td>
+                    </tr>
+                    <tr>
+                        <td>子级任务数</td>
+                        <td id="sonNum"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <div class="task-buttons">
+                                <button id="sql-start" onclick="startTask(this)">开始任务</button>
+                                <button id="sql-del" onclick="deleteRow(this)">删除此任务</button>
+                                <button id="del-son" onclick="deleteSon(this)">删除子级任务</button>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div class="button-container" style=" width: 100%; font-size: 100%; line-height: 8vh; text-align: center;">
+        <h1>基于Python的SQL注入和XSS漏洞检测系统->SQL注入检测任务管理</h1>
+    </div>
+    <div class="table-container">
+        <table id="sql-table" class="table">
+            <thead>
+                <tr>
+                    <th onclick="sortTable(0)">ID</th>
+                    <th onclick="sortTable(1)">目标URL</th>
+                    <th onclick="sortTable(2)">SQL注入检测状态</th>
+                    <th onclick="sortTable(3)">任务创建时间</th>
+                    <th onclick="sortTable(4)">任务开始时间</th>
+                    <th onclick="sortTable(5)">任务结束时间</th>
+                    <th>开始任务</th>
+                    <th>删除任务</th>
+                    <th>查看详情</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- 请求数据创建行 -->
+            </tbody>
+        </table>
+    </div>
+</body>
+<!-- <script src="../js/sqlTasks/sqlTasks.js"></script> -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="../js/sqlTasks/delTask.js"></script>
+<script src="../js/sqlTasks/delTaskD.js"></script>
+<script src="../js/sqlTasks/sqlTasks.js"></script>
+<script src="../js/sqlTasks/startTask.js"></script>
+<script src="../js/sqlTasks/startAllTask.js"></script>
+<script src="../js/sqlTasks/detail.js"></script>
+<script src="../js/sqlTasks/delSon.js"></script>
+<script src="../js/sqlTasks/delSonOpt.js"></script>
+<script src="../js/xssTasks/startOption.js"></script>
+<script src="../js/xssTasks/deleteOption.js"></script>
+</html>

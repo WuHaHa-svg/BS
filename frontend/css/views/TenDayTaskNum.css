@@ -1,0 +1,38 @@
+.charts {
+    margin-top: 1px;
+    display: inline-block;
+    width: 577px;
+    height: 350px;
+    background-color: blanchedalmond;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+#TenDaySqlResGrade {
+    margin-top: 16%;
+    display: inline-block;
+    width: 286px;
+    height: 175px;
+    /* background-color: rgb(243, 243, 243); */
+}
+
+#TenDayXssResGrade {
+    display: inline-block;
+    width: 286px;
+    height: 175px;
+    /* background-color: rgb(255, 255, 255); */
+}
+#SqlTasks {
+    margin-top: 16%;
+    display: inline-block;
+    width: 286px;
+    height: 175px;
+    /* background-color: rgb(243, 243, 243); */
+}
+
+#XssTasks {
+    display: inline-block;
+    width: 286px;
+    height: 175px;
+    /* background-color: rgb(255, 255, 255); */
+}

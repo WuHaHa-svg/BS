@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/config/config.css">
+    <link rel="stylesheet" href="../css/alert/alert.css">
+
+</head>
+
+<body>
+    <!-- 弹窗 -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <span id="modal-text"></span>
+        </div>
+    </div>
+
+    <div class="parameter">
+        <h3>检测参数配置</h3>
+        <form id="config-form">
+            <div class="input-group">
+                <label for="targetURL">目标URL*</label>
+                <input type="text" id="targetURL" name="targetURL" required>
+            </div>
+            <div class="input-group">
+                <label for="max_depth">最大深度</label>
+                <input type="number" id="max_depth" name="max_depth" min="0">
+            </div>
+            <div class="input-group">
+                <label for="is_sql_scan">是否进行SQL注入检测</label>
+                <select id="is_sql_scan" name="is_sql_scan">
+                    <option value="Y">是</option>
+                    <option value="N">否</option>
+                </select>
+            </div>
+            <div class="input-group">
+                <label for="is_xss_scan">是否进行XSS注入检测</label>
+                <select id="is_xss_scan" name="is_xss_scan">
+                    <option value="Y">是</option>
+                    <option value="N">否</option>
+                </select>
+            </div>
+            <div class="button-group">
+                <button type="submit" id="submitBtn">提交</button>
+                <button type="reset" id="reset">重置</button>
+            </div>
+        </form>
+    </div>
+</body>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="../js/config/config.js"></script>
+
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/allTasks/allTasks.css">
+    <link rel="stylesheet" href="../css/alert/resDetail.css">
+</head>
+
+<body>
+    <div class="button-container" style=" width: 100%; font-size: 100%; line-height: 8vh; text-align: center;">
+        <h1>基于Python的SQL注入和XSS漏洞检测系统->查看所有任务</h1>
+    </div>
+    <!-- 明细弹窗 -->
+    <div id="detail" class="detail">
+        <div class="detail-content">
+            <span class="close-detail">&times;</span>
+            <div id="content" class="content">
+            </div>
+        </div>
+    </div>
+    <div class="table-container">
+        <table id="task-table" class="table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>目标URL</th>
+                    <th>所属深度</th>
+                    <th>最大深度</th>
+                    <th>是否SQL注入检测</th>
+                    <th>是否XSS注入检测</th>
+                    <th>SQL注入检测状态</th>
+                    <th>XSS注入检测状态</th>
+                    <th>任务创建时间</th>
+                    <th>任务开始时间</th>
+                    <th>任务结束时间</th>
+                    <th>查看结果</th>
+                    <!-- <th>查看结果</th> -->
+                </tr>
+            </thead>
+            <tbody>
+                <!-- 请求数据创建行 -->
+            </tbody>
+        </table>
+    </div>
+</body>
+<script src="../js/allTasks/alltasks.js"></script>
+<script src="../js/allTasks/resDetail.js"></script>
+<!-- <script>GetTasks()</script> -->
+
+</html>

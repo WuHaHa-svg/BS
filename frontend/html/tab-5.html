@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>可视化模块</title>
+    <!-- 引入jquery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- 引入 ECharts 库 -->
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5.2.1/dist/echarts.min.js"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/echarts/5.1.2/echarts.min.js"></script>
+    <link rel="stylesheet" href="../css/views/dataContainers.css">
+    <link rel="stylesheet" href="../css/views/TenDayTaskNum.css">
+</head>
+
+<body>
+    <div class="button-container" style=" width: 100%; font-size: 100%; line-height: 8vh; text-align: center;">
+        <h1>基于Python的SQL注入和XSS漏洞检测系统->系统数据可视化</h1>
+    </div>
+    <div class="tableContainer" onclick="GetTenDayTaskNum()">
+        <div class="charts" id="TenDayTaskNum"></div>
+        <div class="charts" id="TenDayTaskProcNum"></div>
+        <div class="charts" id="TenDayResNum"></div>
+        <div class="charts" id="GradesCircles">
+            <div id = "TenDaySqlResGrade"></div>
+            <div id = "TenDayXssResGrade"></div>
+        </div>
+        <div class="charts" id="">
+            <div id = "SqlTasks"></div>
+            <div id = "XssTasks"></div>
+        </div>
+        <div class="charts" id="TaskHdr"></div>
+    </div>
+</body>
+<script src="../js/dataView/TenDayTaskNum.js"></script>
+<script src="../js/dataView/TenDayResNum.js"></script>
+<script src="../js/dataView/TenDayTaskProcNum.js"></script>
+<script src="../js/dataView/TenDaySqlResGrade.js"></script>
+<script src="../js/dataView/TenDayXssResGrade.js"></script> 
+<script src="../js/dataView/SqlTasks.js"></script> 
+<script src="../js/dataView/XssTasks.js"></script> 
+<script src="../js/dataView/TaskHdr.js"></script> 
+</html>

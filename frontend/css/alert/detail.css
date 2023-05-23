@@ -1,0 +1,100 @@
+.detail {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    border-radius: 10px;
+}
+
+.detail ::-webkit-scrollbar {
+    display: none;
+}
+
+.detail-content {
+    position: absolute;
+    top: 56%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    height: 70%;
+    backdrop-filter: blur(35px);
+    border-radius: 10px;
+    /* padding: 20px; */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.6);
+
+}
+
+.detail-content .close-detail {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+    font-weight: bold;
+    color: black;
+    cursor: pointer;
+}
+
+.detail-content .content {
+    width: 94%;
+    position: absolute;
+    /* top: 22px; */
+    padding: 20px;
+    border-radius: 10px;
+    overflow: auto;
+}
+.detail-content .content table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.detail-content .content table th, td {
+  padding: 8px;
+  text-align: left;
+  vertical-align: center;
+  text-align: center;
+}
+
+.detail-content .content table th {
+  /* background-color: #f2f2f2; */
+  text-align: center;
+  border-radius: 5px;
+  font-size: 26px;
+  height: 88px;
+}
+
+.detail-content .content table td {
+  word-wrap: break-word;
+  border-bottom: 1px solid #ddd;
+}
+
+.task-buttons button {
+  border-radius: 5px;
+  background-color: #000000;
+  color: #ffffff;
+  transition: all 0.2s ease-in-out;
+  margin: 0 50px;
+}
+
+.task-buttons #sql-start,#xss-start {
+  background-color: #47ce26;
+  color: #000;
+}
+
+.task-buttons #sql-del,#xss-del {
+  background-color: #ff1717;
+  color: #000;
+}
+
+.task-buttons #del-son {
+  background-color: #fbff00;
+  color: #000;
+}
+
+.task-buttons button:hover {
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+  transform: scale(1.05);
+}

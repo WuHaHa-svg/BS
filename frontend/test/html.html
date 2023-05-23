@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>柱状图</title>
+  <script src="https://cdn.jsdelivr.net/npm/echarts@5.2.1/dist/echarts.min.js"></script>
+</head>
+<body>
+  <div id="myChart" style="width: 600px;height:400px;"></div>
+  <script type="text/javascript">
+    var myChart = echarts.init(document.getElementById('myChart'));
+    // 指定图表的配置项和数据
+    var option = {
+      title: {
+        text: 'SQL注入检测任务和XSS注入检测任务总览',
+        left: 'left'
+      },
+      tooltip: {},
+      legend: {
+        data: ['任务数', '漏洞数'],
+        left: 'right'
+      },
+      xAxis: {
+        type: 'value'
+      },
+      yAxis: {
+        type: 'category',
+        data: ['XSS任务', 'SQL任务']
+      },
+      series: [
+        {
+          name: '任务数',
+          type: 'bar',
+          data: [120, 200]
+        },
+        {
+          name: '漏洞数',
+          type: 'bar',
+          data: [80, 170]
+        }
+      ]
+    };
+
+    // 使用刚指定的配置项和数据显示图表。
+    myChart.setOption(option);
+  </script>
+</body>
+</html>
